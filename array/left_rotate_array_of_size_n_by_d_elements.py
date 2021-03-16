@@ -1,4 +1,6 @@
+# Method 1
 # Rotate One by One
+# Using temp varaiable
 def left_rotate_by_one(arr):
     temp = arr[0]
     for i in range(len(arr)-1):
