@@ -1,9 +1,11 @@
 # Given a binary array, find the maximum number of consecutive 1s in this array.
 
 def max_consecutive_ones(arr):
-    if len(arr) == 0 and arr[0] == 0:
+    if len(arr) == 0:
+        return "Empty Array"
+    elif len(arr) == 1 and arr[0] == 0:
         return 0
-    elif len(arr) == 0:
+    elif len(arr) == 1 and arr[0] == 1:
         return 1
     max_cnt = 0
     cnt = 0
@@ -18,5 +20,5 @@ def max_consecutive_ones(arr):
 
 
 if __name__ == '__main__':
-    arr = [0]
+    arr = [1, 1, 1]
     print(max_consecutive_ones(arr))
