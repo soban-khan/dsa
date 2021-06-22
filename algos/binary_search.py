@@ -1,17 +1,16 @@
 # O(log(n)) is time complexity for this algo
 # Recursive implementation
-def binary_search(arr, left, right, element):
+def binary_search_recursive(arr, left, right, element):
     if right >= left:
         mid = left + (right-left) // 2
-        print(mid)
+        # print(mid)
         if arr[mid] == element:
             return mid
         elif arr[mid] > element:
-            return binary_search(arr, left, mid-1, element)
+            return binary_search_recursive(arr, left, mid-1, element)
         else:
-            return binary_search(arr, mid+1, right, element)
-    else:
-        return -1
+            return binary_search_recursive(arr, mid+1, right, element)
+    return -1
 
 # Iterative implementation
 
@@ -29,5 +28,5 @@ def binary_search_iterative(arr, left, right, element):
 
 
 if __name__ == '__main__':
-    arr = [12, 23, 42, 5, 67, 8]
-    print(binary_search_iterative(arr, 0, len(arr)-1, 2))
+    arr = [1, 3, 7, 8, 11]
+    print(binary_search_recursive(arr, 0, len(arr)-1, 11))
