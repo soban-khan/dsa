@@ -5,4 +5,4 @@ def d2b_recursive(num):
 
 
 if __name__ == '__main__':
-    d2b_recursive(4)
+    d2b_recursive(9)
