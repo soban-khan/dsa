@@ -1,3 +1,6 @@
+// Write a program to find all matrix elements which are minimum in their row
+// and minimum in their column.
+
 function minInRow(matrix) {
     let rowMin = {}
     for (let i = 0; i < matrix.length; i++) {

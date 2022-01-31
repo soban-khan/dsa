@@ -1,3 +1,9 @@
+// Write a program to find all matrix elements which are minimum in their row and maximum in their column.
+// Input: mat[][]= { 20   5    15
+//                          14   54    9
+//                           60  45    32}
+// output : 32
+
 function task(matrix) {
     let ans = []
     let set = new Set()
