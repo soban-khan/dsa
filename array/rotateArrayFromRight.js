@@ -1,3 +1,4 @@
+// brute force approach
 function cyclicRotation(arr, d) {
   for (let i = 0; i < d; i++) {
     temp = arr[arr.length - 1];
@@ -8,9 +9,31 @@ function cyclicRotation(arr, d) {
   }
 }
 
+
+// reversal algo
+// reverse the last no of elements of array by which we want to rotate
+// then reverse the whole array
+function reverseArray(arr, start, end) {
+  while (start < end) {
+    let temp = arr[start]
+    arr[start] = arr[end]
+    arr[end] = temp
+    start++
+    end--
+  }
+  console.log(arr)
+}
+
+function rotateFromRight(arr, d) {
+  reverseArray(arr, arr.length - d, arr.length - 1)
+  reverseArray(arr, 0, arr.length - 1)
+}
+
+
+
 arr = [1, 2, 3, 4, 5, 6];
 let d = 2
 d = d % arr.length
 console.log(arr);
-cyclicRotation(arr, d);
+rotateFromRight(arr, d);
 console.log(arr);
