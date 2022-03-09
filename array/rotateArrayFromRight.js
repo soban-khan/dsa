@@ -9,6 +9,8 @@ function cyclicRotation(arr, d) {
 }
 
 arr = [1, 2, 3, 4, 5, 6];
+let d = 2
+d = d % arr.length
 console.log(arr);
-cyclicRotation(arr, 2);
+cyclicRotation(arr, d);
 console.log(arr);
