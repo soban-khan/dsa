@@ -21,7 +21,6 @@ function reverseArray(arr, start, end) {
     start++
     end--
   }
-  console.log(arr)
 }
 
 function rotateFromRight(arr, d) {
