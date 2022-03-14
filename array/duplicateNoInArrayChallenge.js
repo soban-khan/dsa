@@ -4,41 +4,38 @@
 // just as inserted above
 // return no of iteratons it will take to get duplicate number next to one another
 
-function ArrayChallenge(num) {
-    let l = []
-    let mcnt = 0
-    function makelist(param) {
-        let list = []
-        while (param > 10) {
-            list.push(param % 10)
-            param = Math.floor(param / 10)
-        }
-        list.push(param)
-        list = list.reverse()
-        return list
+function makeArrayFromInputInteger(inputInteger) {
+    let arr = new Array()
+    while (inputInteger >= 10) {
+        arr.unshift(inputInteger % 10)
+        inputInteger = Math.floor(inputInteger / 10)
     }
-    let rlist = makelist(num)
-    l = [...rlist]
-    let i = 0
-    let j = 1
-    let flag = 1
-    while (flag != 0) {
-        while (j < l.length) {
-            if (l[j] != l[i]) {
-                j++; i++
-            }
-            else {
-                flag = 0
-                return mcnt
-            }
+    arr.unshift(inputInteger)
+    return arr
+}
+
+
+
+
+function duplicateInteger(originalInput) {
+    let firstArray = []
+    firstArray = makeArrayFromInputInteger(originalInput)
+    let randomMultiplier = Math.floor(Math.random() * (firstArray.length - 0) + 0)
+    let newInteger = originalInput * firstArray[randomMultiplier]
+    consecutiveArray = firstArray.concat(makeArrayFromInputInteger(newInteger))
+    let cnt = 0
+    for (let i = 0; i < consecutiveArray.length; i++) {
+        cnt++
+        if (i == consecutiveArray.length - 1) {
+            randomMultiplier = Math.floor(Math.random() * (consecutiveArray.length - 0) + 0)
+            newInteger = originalInput * consecutiveArray[randomMultiplier]
+            consecutiveArray = consecutiveArray.concat(makeArrayFromInputInteger(newInteger))
         }
-        let m = Math.floor(Math.random() * (l.length - 0) + 0)
-        let mul = l[m] * num
-        mcnt++
-        rlist = makelist(mul)
-        l.push(...rlist)
+        else if (consecutiveArray[i] === consecutiveArray[i + 1]) {
+            return cnt
+        }
     }
 }
 
-// keep this function call here 
-console.log(ArrayChallenge(43456));
+
+console.log(duplicateInteger(465))
