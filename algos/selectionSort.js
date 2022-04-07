@@ -6,6 +6,7 @@
 // In every iteration of selection sort, the minimum element (considering ascending order) 
 // from the unsorted subarray is picked and moved to the sorted subarray. 
 
+let log = require('../log')
 
 function swap(arr, toIndex, fromIndex) {
     let temp = arr[toIndex]
@@ -21,7 +22,7 @@ function selectionSort(arr) {
         }
         swap(arr, minIndex, i)
     }
-    console.log(arr)
+    log(arr)
 }
 
 let arr = [64, 25, 12, 22, 11];
