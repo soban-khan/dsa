@@ -4,7 +4,7 @@
  *    The only way to improve on this is to check if n is divisible by 
  *   all KNOWN PRIMES from 2 to sqrt(n).
  **/
-function isPrimeBest(n) {
+function isPrime(n) {
     // check lower boundaries on primality
     if (n == 2) {
         return true;
@@ -24,4 +24,4 @@ function isPrimeBest(n) {
     return true;
 }
 
-console.log(isPrimeBest(26))
+console.log(isPrime(26))
