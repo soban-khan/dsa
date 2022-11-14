@@ -14,11 +14,19 @@ function thirdMax(arr) {
         newSet.forEach(itr => max = itr > max ? itr : max)
         if (i == 2) { }
         else { newSet.delete(max) }
-
     }
     return max
-
 }
+
+// var thirdMax = function (nums) {
+//     let a = [...new Set(nums)].sort((a, b) => b - a)
+//     console.log(a)
+//     if (a.length >= 3) {
+//         return a[2]
+//     } else {
+//         return a[0]
+//     }
+// };
 
 let arr = [2, 1, 3]
 console.log(thirdMax(arr))
