@@ -25,13 +25,14 @@ function reverseArray(arr, start, end) {
 
 function rotateFromRight(arr, d) {
   reverseArray(arr, arr.length - d, arr.length - 1)
+  reverseArray(arr, 0, arr.length - d - 1)
   reverseArray(arr, 0, arr.length - 1)
 }
 
 
 
-arr = [1, 2, 3, 4, 5, 6];
-let d = 2
+arr = [1, 2, 3, 4, 5, 6, 7]
+let d = 3
 d = d % arr.length
 console.log(arr);
 rotateFromRight(arr, d);
